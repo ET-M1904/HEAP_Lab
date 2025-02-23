@@ -5,7 +5,7 @@ Date::Date(){
 	month = "";
 	day = "";
 	year = "";
-}
+};
 
 void Date::init(std::string dateString){
 	std::stringsteam ss(dateString)
@@ -19,11 +19,18 @@ void Date::init(std::string dateString){
 	std::string tYear;
 
 	ss.clear();
+	ss.str(dateString);
+
+	getline(ss, tMonth, '/');
+	getline(ss, tDay, '/');
+	getline(ss, tYear);
+
+	ss.clear();
 	ss.str("");
 
 	ss << tDay << " " << tMonth << " " << tYear;
 	ss >> day >> month >> year;
-}
+};
 
 void Date::printDate(){
 	std::string months[] = { "Null", "January", "Febuary",
@@ -32,7 +39,7 @@ void Date::printDate(){
 				"October", "November", "December"};
 	std::cout << months[month] << " ";
 	std::cout << day << ", " << year << std::endl;
-}
+};
 
 
 

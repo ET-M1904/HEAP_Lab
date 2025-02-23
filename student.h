@@ -22,4 +22,7 @@ class Student {
 		void printStudent();
 		std::string getLastFirst();
 		std::string getLastName();
-}
+};
+
+
+#endif
