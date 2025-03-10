@@ -17,6 +17,31 @@ Student::Student(){
 
 Student::Student(std::string studentString){
 	Student::init(studentString);
+	std::string street;
+	std::string city;
+	std::string state;
+	std::string zip;
+	std::string tDob;
+	std::string tGradDate;
+	std::string tCreditHours;
+
+	getline(ss, firstName, ',');
+	getline(ss, lastName, ',');
+	getline(ss, street, ',');
+	getline(ss, city, ',');
+	getline(ss, state, ',');
+	getline(ss, zip, ',');
+	getline(ss, tDob, ',');
+	getline(ss, tGradDate, ',');
+	getline(ss, tCreditHours);
+
+	address->init(street, city, state, zip);
+	dob->init(tDob);
+	expectedGrad->init(tGradDate);
+
+	ss.clear();
+	ss.str(tCreditHours);
+	ss >> creditHours;
 }
 
 Student::~Student(){
